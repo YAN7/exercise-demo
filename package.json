@@ -1,0 +1,20 @@
+{
+  "name": "exercise-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YAN7/exercise-demo.git"
+  },
+  "keywords": [],
+  "author": "YAN7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YAN7/exercise-demo/issues"
+  },
+  "homepage": "https://github.com/YAN7/exercise-demo#readme"
+}
