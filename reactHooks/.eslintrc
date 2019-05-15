@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+    "rules": {
+        "prop-types": 0,
+        "react-hooks/rules-of-hooks": "error"
+    }
+}

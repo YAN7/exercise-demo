@@ -1,0 +1,12 @@
+{
+  "name": "lesson06",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "YAN7",
+  "license": "MIT",
+  "dependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.5",
+    "should": "^13.2.1"
+  }
+}

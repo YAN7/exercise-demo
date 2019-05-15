@@ -1,0 +1,10 @@
+{
+  "name": "lesson05",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "YAN7",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.0"
+  }
+}
