@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { Switch } from 'react-router-dom'
+
+import Counter from './useReducer'
 
 
 function App() {
@@ -14,6 +17,8 @@ function App() {
     // 3. Use the surname state variable
     const [surname, setSurname] = useState('Poppins');
 
+    const [count, setCount] = useState(0);
+
     // 4. Use an effect for updating the title
     useEffect(function updateTitle() {
         document.title = name + ' ' + surname;
@@ -21,6 +26,16 @@ function App() {
     return (
         <div>
             hello world
+            <div>
+                <button onClick={() => setCount(count+1)}>
+                    +1
+                </button>
+                <button onClick={() => setCount(count - 1)}>
+                    -1
+                </button>
+                {count}
+            </div>
+            <Counter />
         </div>
     )
 
