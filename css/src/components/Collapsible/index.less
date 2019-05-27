@@ -1,0 +1,91 @@
+.collapsible {
+    margin-top: .12rem;
+}
+.coll {
+    background-color: #fff;
+    padding: .26rem .2rem;
+    color: #387ae7;
+    font-size: .238rem;
+}
+.num {
+    padding: 2px 6px;
+    color: #fff;
+    background-color: #387ae7;
+    border-radius: 6px;
+    font-size: .12rem;
+    margin-left: .16rem;
+    vertical-align: middle;
+}
+.arrow {
+    width: .26rem;
+    margin-left: .16rem
+}
+.re {
+    float: right;
+    margin-right: .14rem;
+    font-size: .2rem;
+    color: #3e3e3e;
+    position: relative;
+}
+.right {
+    float: right;
+}
+
+.unload {
+    position: absolute;
+    left: -.24rem;
+    top: 1px;
+    width: .2rem;
+}
+.load {
+    position: absolute;
+    left: -.24rem;
+    top: 1px;
+    width: .2rem;
+    -webkit-animation: spin .5s linear infinite;
+    animation: spin .5s linear infinite;
+}
+
+@-webkit-keyframes spin{
+    0%{
+        -webkit-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    100%{
+        -webkit-transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
+        transform:rotate(360deg)
+    }
+}
+    
+@keyframes spin{
+    0%{
+        -webkit-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    100%{
+        -webkit-transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
+        transform:rotate(360deg)
+    }
+}
+// .items {
+//     height: 0;
+//     overflow: hidden;
+// }
+.item {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: .2rem .3rem;
+    font-size: .238rem !important;
+    border-bottom: 1px solid #f3f6fb;
+    sub {
+        margin-left: .1rem;
+        color: #5e5e5e
+    }
+    img {
+        float: right;
+    }
+}

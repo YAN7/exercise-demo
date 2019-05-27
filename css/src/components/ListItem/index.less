@@ -1,0 +1,28 @@
+
+@import '../../pages/base.less';
+
+  .detail {
+    .flex();
+    .bgw();
+    justify-content: flex-start;
+    .borderBottom();
+    padding: 0.25rem 0.35rem;
+    img {
+      margin-right: 0.18rem;
+    }
+    >div {
+      flex: 1;
+      p {
+        &:first-child {
+          font-size: 0.3rem;
+        }
+        &:last-child {
+          font-size: 0.2rem;
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    span {
+      font-size: 0.3rem;
+    }
+  }

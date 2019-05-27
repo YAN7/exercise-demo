@@ -1,0 +1,137 @@
+@import '../pages/base.less';
+
+.main {
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.topContainer {
+  height: 3.6rem;
+  width: 100vw;
+  background: linear-gradient(to right,#2e83fd, #186ae2);
+  // background: @color;
+  .moneyTitle {
+    display: block;
+    padding-top: 0.8rem;
+    padding-bottom: 0.2rem;
+    font-size: 0.24rem;
+    color: #92bffe;
+    text-align: center;
+  }
+  .totalMoney {
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .pay {
+    .flex-between();
+    flex-wrap: wrap;
+    margin: 0.5rem 1rem 0;
+    position: relative;
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   .vertical();
+    //   width: 100%;
+    //   height: 1px;
+    //   border-bottom: 1px solid #fff;
+    // }
+    p {
+      color: #fff;
+      flex: 50%;
+      padding: 0.12rem 0;
+      &:nth-child(2n) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.listItem {
+  background: white;
+  padding-left: 0.2rem;
+  // height: calc(100vh - 30rem);
+  // height: 100%;
+  // flex: 1;
+  overflow: scroll;
+}
+
+
+.storeList, .deviceList {
+  padding: 0.2rem;
+  color: #353535;
+  font-size: 0.28rem;
+  border-bottom: 1px solid @border-color;
+  display: flex;
+  .circle {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    margin-right: 0.3rem;
+  }
+  .leftText {
+    color: #353535;
+    p {
+      font-size: 0.28rem;
+    }
+    small {
+      color: #666;
+    }
+  }
+  .rightText {
+    flex: 1;
+    text-align: right;
+  }
+}  
+.deviceList {
+  align-items: center;
+  height: 0.64rem;
+  .leftText {
+    font-size: 0.28rem;
+  }
+}
+
+
+.detailList {
+  padding: 0.2rem;
+  color: #353535;
+  font-size: 0.28rem;
+  border-bottom: 1px solid @border-color;
+  // display: flex;
+  .payInfo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0.1rem 0;
+    .leftText {
+      color: #353535;
+      p {
+        font-size: 0.28rem;
+      }
+      small {
+        color: #666;
+      }
+    }
+    .rightText {
+      flex: 1;
+      text-align: right;
+    }
+    .payIcon {
+      padding-right:0.2rem;
+    }
+  }
+  .deviceName {
+    .flex-between();
+    span {
+      color: #555;
+    }
+  }
+}

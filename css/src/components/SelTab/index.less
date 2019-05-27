@@ -1,0 +1,42 @@
+@import '../../pages/base.less';
+
+.header {
+  background: @primary-color;
+  min-height: 0.8rem;
+  .flex-around();
+  color: #81bdf7;
+  font-size: 0.28rem;
+  position: relative;
+  border-left: 0.5rem solid @primary-color;
+  border-right: 0.5rem solid @primary-color;
+  .line {
+    position: absolute;
+    bottom: 0.04rem;
+    transition: all 0.2s;
+    width: 1rem;
+    height: 0.05rem;
+    background: #fff;
+    left: 25%;
+    transform: translateX(-50%);
+  }
+  >div:nth-child(n+2) {
+    .flex();
+    flex: 1;
+    height: 100%;
+  }
+  >div.active {
+    color: #fff;
+  }
+  &.blue {
+    .bgw();
+    color: #c1c1c1;
+    border-color: #fff;
+    .borderBottom();
+    .line {
+      background: @primary-color;
+    }
+    >div.active {
+      color: @primary-color;
+    }
+  }
+}

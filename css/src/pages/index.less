@@ -1,0 +1,265 @@
+.flex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column() {
+  flex-direction: column;
+}
+
+.wrapper {
+  .flex();
+  .column();
+}
+
+/**
+  * demo1
+  */
+
+.demo1 {
+  .flex();
+  .column();
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin: 20px auto;
+  border: 1px solid #456;
+  font-size: 20px;
+  &:before {
+    content: attr(data-num);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+/**
+  * demo2
+  */
+// turn 单位 表示一圈
+@keyframes spin { to { transform: rotate(1turn); } };
+@keyframes radius {50% { border-radius: 50%; }};
+@keyframes color { 33% { color: orange; } 66% { color: deeppink } };
+@keyframes width { 50% { border-width: .3em; } };
+@keyframes width2 { 50% { border-width: .5em; } };
+@keyframes top {20% {top: 50%;} 50% {top: 25%} 75% {top: 50%}};
+@keyframes loader {to { background-position: -800px 0; }};
+
+.loading1 {
+  margin: 50px auto;
+  &:before {
+    content: '';
+    display: block;
+    margin: 0 auto 1em;
+    width: 4em;
+    height: 4em;
+    border: 1.5em solid;
+    color: yellowgreen;
+    box-sizing: border-box;
+    animation:  spin 1.3s,  radius .9s,  color 1.3s,  width 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+.loading2 {
+  margin: 100px auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  .flex();
+  align-items: flex-end;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto 1em;
+    width: 4em;
+    height: 4em;
+    border: 1.5em solid;
+    border-radius: 50%;
+    color: yellowgreen;
+    box-sizing: border-box;
+    animation: color 1.3s,  
+    width2 1.5s, top 1.5s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-iteration-count: infinite;
+  }
+}
+
+.loading3 {
+  width: 100px; 
+  height: 100px;
+  text-indent: 999px; 
+  overflow: hidden;
+  margin: auto;
+	background: url(http://dabblet.com/img/loader.png) 0 0;
+	animation: loader 1s infinite steps(8);
+}
+
+/**
+ * demo3
+ */
+
+ @keyframes ants { to { background-position: 100% 100% } }
+
+ .demo3 {
+   padding: 1em;
+   margin: 30px auto;
+   border: 1px solid transparent;
+   background: linear-gradient(white, white) padding-box,
+               repeating-linear-gradient(-45deg, black 0, black 25%, transparent 0, transparent 50%) 0 / .6em .6em;
+   animation: ants 12s linear infinite;
+   animation-play-state: running;
+   
+   max-width: 20em;
+   font: 100%/1.6 Baskerville, Palatino, serif;
+   &:hover {
+    animation-play-state: paused;
+   }
+ }
+
+ /**
+  * demo4
+  */
+
+@keyframes typing {from { width: 0 }};
+
+@keyframes caret {50% { border-right-color: transparent; }}
+
+.demo4 {
+  width: 100vw;
+  height: 100vh;
+  background: #58a;
+  h1 {
+    font: bold 900% Consolas, Monaco, monospace;
+    // 这一单位代表元素所用字体 font中“0”这一字形的宽度（“0”，Unicode字符U+0030），或更准确地说是“0”这一字形的预测尺寸（advance measure）
+    width: 15ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .05em solid;
+    animation: typing 8s steps(15),
+              caret 1s steps(1) infinite;
+    color: white;
+    // x , y 阴影位置, 模糊位置, 颜色
+    text-shadow: 0 1px hsl(0,0%,85%),
+    0 2px hsl(0,0%,80%),
+    0 3px hsl(0,0%,75%),
+    0 4px hsl(0,0%,70%),
+    0 5px hsl(0,0%,65%),
+    0 5px 10px black;
+  }
+}
+
+/**
+ * demo5
+ */
+
+ @keyframes panoramic {to { background-position: 100% 0; }}
+
+.demo5 {
+  width: 150px; 
+  height: 150px;
+  margin: auto;
+	background: url('http://c3.staticflickr.com/3/2671/3904743709_74bc76d5ac_b.jpg');
+  background-size: auto 100%;	
+  // animation-direction 值是 "alternate"，则动画会在奇数次数（1、3、5 等等）正常播放，而在偶数次数（2、4、6 等等）向后播放。
+	animation: panoramic 5s linear infinite alternate;
+  animation-play-state: paused;
+  &:hover, &:focus {
+	  animation-play-state: running;
+  }
+}
+
+/**
+ * demo6
+ */
+
+ .demo6  {
+  img {
+    max-width: 250px;
+    margin: 20px;
+    // clip-path属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏
+    // polygon 剪切一个多边形 列表中的每个参数对，表示多边形对应顶点的x轴和y轴坐标。
+    // http://species-in-pieces.com/
+    // http://bennettfeely.com/clippy/
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: 1s;
+    &:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  .circle {
+    transition: 1s;
+    // circle 剪切一个圆形 第一个参数为半径,第二个为圆心
+    clip-path: circle(50.0% at 50% 50%);
+    &:hover {
+      clip-path: circle(0% at 50% 50%);
+    }
+  }
+  >div>div {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #f45;
+    margin: 10px;
+  }
+  .path1 {
+    clip-path: polygon(5px 12px, 16px 3px, 16px 21px);
+  }
+  .path2 {
+      clip-path: polygon(3px 5px, 21px 5px, 12px 16px);
+  }
+  .path3 {
+    clip-path: polygon(23px 12px, 16px 3px, 16px 21px);
+  }
+  .path4 {
+    clip-path: polygon(13px 15px, 31px 15px, 22px 2px);
+  }
+ }
+
+ .demo7 {
+  min-height: 100vh;
+	box-sizing: border-box;
+	margin: 0;
+	padding-top: calc(30vh);
+	font: 350%/1.6 Baskerville, Palatino, serif;
+ }
+
+ main {
+	position: relative;
+	margin: 0 auto;
+	padding: 2em;
+	max-width: 30em;
+	background: hsla(0,0%,100%,.25) border-box;
+	overflow: hidden;
+	border-radius: .6em;
+	box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+	            0 1em 2em rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+  font: 180%/1.6 Baskerville, Palatino, serif;
+}
+
+.demo7 {
+	background: url("http://csssecrets.io/images/tiger.jpg") 0 / cover fixed;
+}
+
+main::before {
+	content: '';
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: -30px;
+  -webkit-backdrop-filter: blur(40px);
+	// -webkit-filter: blur(20px);
+  // filter: blur(20px);
+}
+
+blockquote {
+  font-style: italic;
+}
+blockquote cite { font-style: normal; }

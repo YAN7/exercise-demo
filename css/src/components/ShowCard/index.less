@@ -1,0 +1,54 @@
+
+@import '../../pages/base.less';
+
+
+.main {
+  .flex();
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  color: #fff;
+}
+.card {
+  .flex();
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background: @primary-color;
+  border-top-left-radius: 0.15rem;
+  border-top-right-radius: 0.15rem;
+  padding: 0.3rem 0.5rem;
+  .title {
+    flex: 1;
+    color: #92bffe;
+    font-size: 0.20rem;
+  }
+  .money {
+    flex: 1;
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+  }
+  .distribution {
+    width: 100%;
+    margin-top: 0.2rem;
+    .flex-between();
+    p {
+      font-weight: 200;
+      &:first-child {
+        font-size: 0.38rem;
+      }
+      &:last-child {
+        font-size: 0.2rem;
+        text-align: center;
+      }
+    }
+  }
+}
+.consume {
+  .flex-between();
+  width: 100%;
+  background: #e8f0f6;
+  border-bottom-left-radius: 0.15rem;
+  border-bottom-right-radius: 0.15rem;
+  padding: 0.2rem 0.5rem;
+  color: #666;
+}
