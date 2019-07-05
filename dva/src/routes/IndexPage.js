@@ -1,21 +1,72 @@
-import React from 'react';
-import { connect } from 'dva';
-import styles from './IndexPage.css';
+import React, { Component } from 'react';
+// import { Menu } from 'antd';
+import { Link } from 'dva/router';
+import Menu from 'antd/es/menu';
 
-function IndexPage() {
-  return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-      <div className={styles.welcome} />
-      <ul className={styles.list}>
-        <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-        <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
-      </ul>
-    </div>
-  );
+import 'antd/es/menu/style';
+
+const { SubMenu } = Menu;
+
+class Index extends Component {
+  render() {
+    return (
+      <div>
+        <Menu
+          onClick={this.handleClick}
+          style={{ width: 256 }}
+          defaultSelectedKeys={['1']}
+          defaultOpenKeys={['sub1']}
+          mode="inline"
+        >
+          <SubMenu
+            key="sub1"
+            title={
+              <span>
+                <span>Navigation One</span>
+              </span>
+            }
+          >
+            <Menu.ItemGroup key="g1" title="Item 1">
+              <Menu.Item key="1"><Link to="#test1">Option 1</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="#tes2">Option 2</Link></Menu.Item>
+            </Menu.ItemGroup>
+            <Menu.ItemGroup key="g2" title="Item 2">
+              <Menu.Item key="3"><Link to="#test3">Option 3</Link></Menu.Item>
+              <Menu.Item key="4"><Link to="#test4">Option 4</Link></Menu.Item>
+            </Menu.ItemGroup>
+          </SubMenu>
+          <SubMenu
+            key="sub2"
+            title={
+              <span>
+                <span>Navigation Two</span>
+              </span>
+            }
+          >
+            <Menu.Item key="5"><Link to="#test5">Option 5</Link></Menu.Item>
+            <Menu.Item key="6"><Link to="#test6">Option 6</Link></Menu.Item>
+            <SubMenu key="sub3" title="Submenu">
+              <Menu.Item key="7"><Link to="#test7">Option 7</Link></Menu.Item>
+              <Menu.Item key="8"><Link to="#test8">Option 8</Link></Menu.Item>
+            </SubMenu>
+          </SubMenu>
+          <SubMenu
+            key="sub4"
+            title={
+              <span>
+                <span>Navigation Three</span>
+              </span>
+            }
+          >
+            <Menu.Item key="9">Option 9</Menu.Item>
+            <Menu.Item key="10">Option 10</Menu.Item>
+            <Menu.Item key="11">Option 11</Menu.Item>
+            <Menu.Item key="12">Option 12</Menu.Item>
+          </SubMenu>
+        </Menu>
+      </div>
+    );
+  }
 }
 
-IndexPage.propTypes = {
-};
-
-export default connect()(IndexPage);
+export default Index;
