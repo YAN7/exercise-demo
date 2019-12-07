@@ -1,3 +1,5 @@
 {
-    "name": "My Express Exercise App"
+    "name": "My Express Exercise App",
+    "jwtPrivateKey": "",
+    "db": "mongodb://localhost/playground"
 }

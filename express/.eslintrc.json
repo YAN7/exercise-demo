@@ -12,6 +12,13 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
+    "globals": {
+      "test": true,
+      "expect": true,
+      "it": true,
+      "describe": true,
+      "jest": true
+    },
     "rules": {
         "indent": [
             "error",
@@ -21,6 +28,7 @@
             "error",
             "unix"
         ],
+      "no-console": 0,
         "quotes": [
             "error",
             "single"
